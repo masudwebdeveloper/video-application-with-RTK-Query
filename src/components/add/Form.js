@@ -122,7 +122,7 @@ export default function Form() {
         </div>
 
         {isSuccess && <Success message="Video was added successfully" />}
-        {isError && <Success message="There wass an error!" />}
+        {isError && <Success message="There wass an error! adding video" />}
       </div>
     </form>
   );
