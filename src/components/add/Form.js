@@ -6,7 +6,7 @@ import TextInput from "../ui/TextInput";
 import Success from "../ui/Success";
 
 export default function Form() {
-  const [addVideo, { isLoading, isError }] = useAddVideoMutation();
+  const [addVideo, { isLoading, isSuccess, isError }] = useAddVideoMutation();
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
@@ -121,7 +121,7 @@ export default function Form() {
           </button>
         </div>
 
-        {isLoading && <Success message="Video was added successfully" />}
+        {isSuccess && <Success message="Video was added successfully" />}
         {isError && <Success message="There wass an error!" />}
       </div>
     </form>
