@@ -23,7 +23,7 @@ export const apiSlice = createApi({
         return queryString;
       },
       providesTags: (result, error, arg) => [
-        { type: "RelatedVideo", id: arg.id},
+        { type: "RelatedVideo", id: arg.id },
       ],
     }),
     addVideo: builder.mutation({
@@ -46,6 +46,13 @@ export const apiSlice = createApi({
         { type: "RelatedVideo", id: arg.id },
       ],
     }),
+    deleteVideo: builder.mutation({
+      query: (id) => ({
+        url: `/videos/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Videos"],
+    }),
   }),
 });
 
@@ -55,4 +62,5 @@ export const {
   useGetVideosQuery,
   useGetVideoQuery,
   useGetRelatedVideosQuery,
+  useDeleteVideoMutation,
 } = apiSlice;
