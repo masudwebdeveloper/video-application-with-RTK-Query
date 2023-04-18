@@ -11,7 +11,8 @@ export default function AddVideo() {
                     <p className="mt-1 text-sm text-gray-600">
                         Please fillup the form to add new video
                     </p>
-                </div>
+                {/* </div> */}
+                this is form
                 <div className="mt-5 md:mt-0 md:col-span-2">
                     <Form />
                 </div>
